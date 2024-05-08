@@ -183,7 +183,9 @@ const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 
 const responses = {
-    'hello': 'Hello! How can I assist you today?',
+    'здравей': 'Здравейте! Как мога да ви помогна днес?',
+    'здрасти': 'Здравейте! Как мога да ви помогна днес?',
+    'здр': 'Здравейте! Как мога да ви помогна днес?',
     'how are you': 'I\'m just a bot, but I\'m here to help you!',
     'goodbye': 'Goodbye! Have a great day!'
     // Add more responses as needed
