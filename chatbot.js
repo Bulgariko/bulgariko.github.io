@@ -179,7 +179,6 @@
 
 
 
-
 const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 
@@ -211,11 +210,23 @@ function getResponse(message) {
       document.getElementById('user-input').value = '';
   }
 
-  function displayMessage(message, sender) {
-      const chatMessages = document.getElementById('chat-messages');
-      if (chatMessages) {
-          const messageElement = document.createElement('div');
-          messageElement.innerText = `${sender}: ${message}`;
-          chatMessages.appendChild(messageElement);
-      }
-  }
+function displayMessage(message, sender) {
+    const chatMessages = document.getElementById("chat-messages");
+
+    if (chatMessages) {
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("message", sender === "Chatbot" ? "bot" : "user");
+        chatMessages.appendChild(messageElement);
+        
+        const messageLength = message.length;
+        let i = 0;
+
+        const typingEffect = setInterval(() => {
+            messageElement.innerHTML = `${sender}: ${message.substr(0, i)}`;
+            i++;
+            if (i > messageLength) {
+                clearInterval(typingEffect);
+            }
+        }, 50); // Adjust the interval for the typing speed
+    }
+}
