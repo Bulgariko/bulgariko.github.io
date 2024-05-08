@@ -1,215 +1,55 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+/* Header styling */
 h1 {
     text-align: center;
     margin-top: 20px;
     color: #333;
+    font-size: 24px;
 }
 
+/* Chat container styling */
 .chat-container {
-    max-width: 400px;
-    margin: 0 auto;
-    border: 2px solid #ccc;
+    max-width: 100%;
+    margin: 20px;
+    border: 2px solid #ddd;
     border-radius: 10px;
-    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-text {
-    padding: 10px;
-    text-align: center;
-}
-
+/* Chat messages styling */
 .chat-messages {
-    max-height: 300px;
+    max-height: 200px;
     overflow-y: scroll;
     padding: 10px;
     background-color: #f0f0f0;
 }
 
+/* User input container styling */
 .user-input-container {
-    display: flex;
-    background-color: #fff;
     padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
 }
 
+/* User input styling */
 .user-input {
-    flex: 1;
+    width: calc(100% - 70px);
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Send button styling */
 .send-button {
     background-color: #4CAF50;
     color: white;
@@ -217,17 +57,24 @@ h1 {
     border-radius: 5px;
     padding: 8px 15px;
     cursor: pointer;
-  .send-button:hover {
-      background-color: #45a049;
-  }
+}
 
-  .send-button:active {
-      background-color: #3e8e41;
-  }
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        max-width: 100%;
+        margin: 10px;
+    }
 
-  @media screen and (max-width: 600px) {
-      .chat-container {
-          max-width: 90%;
-      }
-  }
+    .chat-messages {
+        max-height: 150px;
+    }
+
+    .user-input {
+        width: calc(100% - 60px);
+    }
+
+    .send-button {
+        padding: 6px 12px;
+    }
 }
