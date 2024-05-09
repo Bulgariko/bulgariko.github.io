@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirect to dashboard.html after a short delay
                 setTimeout(function() {
                     window.location.href = 'dashboard.html';
-                }, 1000); // Redirect after 2 seconds (2000 milliseconds)
+                }, 0); // Redirect after 2 seconds (2000 milliseconds)
             }
         }
     });
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to dashboard.html after a short delay
         setTimeout(function() {
             window.location.href = 'dashboard.html';
-        }, 1000); // Redirect after 2 seconds (2000 milliseconds)
+        }, 0); // Redirect after 2 seconds (2000 milliseconds)
     } else {
         // If no stored username, redirect to login page
         window.location.href = '';
