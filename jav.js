@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         const username = document.getElementById('username').value;
-
+        
         // Check if a username is provided
         if (username.trim() === '') {
             alert('Please enter a username to create an account.');
@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirect to dashboard.html after a short delay
                 setTimeout(function() {
                     window.location.href = 'dashboard.html';
-                }, 0); // Redirect after 2 seconds (2000 milliseconds)
+                }, 100); // Redirect after 2 seconds (2000 milliseconds)
             }
         }
     });
 
-// Automatic login if username is stored
+    // Automatic login if username is stored
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
         // Simulated automatic login process
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to dashboard.html after a short delay
         setTimeout(function() {
             window.location.href = 'dashboard.html';
-        }, 0); // Redirect after 2 seconds (2000 milliseconds)
-    } else {
-        // If no stored username, redirect to login page
-        window.location.href = '';
+        }, 100); // Redirect after 2 seconds (2000 milliseconds)
+    }
+});
