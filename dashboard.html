@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8557840085455007"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulgariko</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Application</title>
     <link rel="stylesheet" href="ho.css">
 </head>
 <body>
-    <h1>Welcome to Bulgariko</h1>
-    <div class="chat-container">
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="message-input">
-            <input type="text" id="user-input" class="user-input" placeholder="Enter your message...">
-            <button onclick="sendMessage()" class="send-button">ㅤ</button>
-        </div>
-    </div>
-    <script src="chatbot.js"></script>
-</body>
-</html>
+<div id="chat-container" class="container">
+    <!-- Banner -->
+    <div class="banner">
+        <h2>Bulgariko</h2>
+    <!-- Message list -->
+    <ul id="chat-messages"></ul>
+    <!-- Form -->
+    <form onsubmit="sendMessage(); return false">
+        <!-- Who's typing -->
+        <span id="typing"></span>
+        <!-- Message input -->
+        <input type="text" placeholder="Enter message" id="user-input" autocomplete="off" class="typing">
+        <!-- <button type="submit">Send</button> -->
+    </form>
+</div>
+
+<script defer src="js/script.js"></script>
+<script>
+const chatContainer = document.getElementById('chat-container');
+const userInput = document.getElementById('user-input');
+
+const responses = {
+    'hello': 'Hello! How can I assist you today?',
+    'hi': 'Hi there! How can I help you?',
+    'how are you': 'I\'m just a bot, but I\'m here to help you!',
+    'goodbye': 'Goodbye! Have a great day!'// Add more responses as needed
+    };
+
+    function displayMessage(message, sender) {
+        const chatMessages = document.getElementById("chat-messages");
+
+        if (chatMessages) {
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message", sender === "Bulgariko" ? "bot" : "user");
+            chatMessages.appendChild(messageElement);
+
+            const messageLength = message.length;
+            let i = 0;
+
+            const typingEffect = setInterval(() => {
+                messageElement.innerHTML = `${sender}: ${message.substr(0, i)}`;
+                i++;
+                if (i > messageLength) {
+                    clearInterval(typingEffect);
+                }
+            }, 50); // Adjust the interval for the typing speed
+        }
+    }
+
+    function sendMessage() {
+        const userMessage = document.getElementById('user-input').value;
+        displayMessage(userMessage, 'You');
+
+        const botResponse = getResponse(userMessage);
+        displayMessage(botResponse, 'Bulgariko');
+
+        // Clear the user input after sending the message
+        document.getElementById('user-input').value = '';
+    }
+
+    function getResponse(message) {
+        return responses[message.toLowerCase()] || "I'm not sure how to respond to that.";
+    }
+    </script>
+    </body>
+    </html>
