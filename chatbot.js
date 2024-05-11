@@ -2,11 +2,11 @@ const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 
 const responses = {
-    'здравей': 'Здравейте! Как мога да ви помогна днес?',
-    'здрасти': 'Здравейте! Как мога да ви помогна днес?',
-    'здр': 'Здравейте! Как мога да ви помогна днес?',
-    'how are you': 'I\'m just a bot, but I\'m here to help you!',
-    'goodbye': 'Goodbye! Have a great day!'
+    'здравей: Как мога да ви помогна днес?',
+    'здр: Как мога да ви помогна днес?',
+    'здрасти: Как мога да ви помогна днес?',
+    'как си': 'Аз съм просто бот, но съм тук, за да ти помогна!',
+    'сбогом': 'Сбогом! Приятен ден!
     // Add more responses as needed
 };
 
