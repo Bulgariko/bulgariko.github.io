@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(40deg, lightblue, lightgreen);
+  background: linear-gradient(to right, #007bff, #28a745);
   color: white;
 }
 
@@ -41,11 +41,16 @@ body {
   max-width: 500px;
   background-color: #0005;
   border-radius: 10px;
+  position: relative;
 }
 /* No padding or margin on the form (message input, span with typing) */
 form {
   padding: 0;
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Style system notifications */
@@ -122,7 +127,7 @@ button {
 li {
   padding: 10px;
   border-radius: 10px;
-  background: #0003;
+  background: linear-gradient(to right, #007bff, #28a745);
   width: 60%;
   height: fit-content;
   word-wrap: break-word;
@@ -190,21 +195,6 @@ ul#messages {
 /* The list of messages */
 ul#messages {
   height: 400px;
-}
-
-form {
-  position: relative;
-}
-
-/* Animation for fading in the newest message */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 /* Style code blocks */
@@ -292,7 +282,7 @@ table {
 }
 
 th {
-  font-weight: 500;
+ font-weight: 500;
 }
 
 th,
@@ -326,4 +316,34 @@ tr:nth-child(odd) {
   position: relative;
   top: 5px;
   margin-right: 6px;
+
+  /* Style bot and user icons */
+  .bot-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  }
+
+Add anims to this
+- Add anims to this
+
+Answer the question:
+
+To add animations to the CSS code, you can use the `@keyframes` rule to define the animation and then apply it to an element using the `animation` property. Here's an example of how you can add a simple fade-in animation to the message sender name in the banner:
+
+1. Add a new CSS class for the animated element, for example:
+```css
+.animated-message-sender {
+  animation: fade-in 2s forwards;
 }
