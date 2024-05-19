@@ -4,6 +4,11 @@ body, html {
   padding: 0;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .loader {
   border: 8px solid #f3f3f3; /* Light grey */
   border-top: 8px solid #3498db; /* Blue */
@@ -15,6 +20,10 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes spin {
@@ -22,9 +31,29 @@ body, html {
   100% { transform: rotate(360deg); }
 }
 
-.spinning-logo {
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure the loader is on top of the spinning logo */
+}
+
+.spinning-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0.spinning-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation */
+  animation: spin 2s linear infinite; /* Apply the spin animation */
+  z-index: 2; /* Ensure the spinning logo is on top of other elements */
 }
