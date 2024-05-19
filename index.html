@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loading.css"> <!-- Link to your CSS file -->
   <title>Loading Screen</title>
 </head>
 <body>
-  <div class="loading-screen">
-    <img src="loading-gif.gif" alt="Loading..." class="loading-gif">
-    <div class="loading-text">Loading...</div>
-  </div>
-  <script src="load.js"></script>
+  <div class="loader"></div>
+  <img class="spinning-logo" src="logo.png" alt="Logo">
+  <script>
+    setTimeout(() => {
+      window.location.href = 'dashboard.html'; // Redirect to dashboard after a timeout
+    }, 3000); // 3000ms (3 seconds) timeout for demo purposes
+  </script>
 </body>
 </html>
