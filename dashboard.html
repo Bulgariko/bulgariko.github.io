@@ -167,34 +167,5 @@
     </header>
     <script async src="https://cse.google.com/cse.js?cx=b52902250bcba4084"></script>
     <div class="gcse-search"></div>
-    <script>
-let inactivityTime;
-const displayNotification = () => {
-  // Check if the user has granted permission
-  if (Notification.permission === "granted") {
-    const notification = new Notification("", {
-      body: "You've been away for a while. Why don't you search something?",
-      icon: "https://raw.githubusercontent.com/Bulgariko/bulgariko.github.io/main/bg.png",
-    });
-    notification.onclick = () => {
-      notification.close();
-      window.parent.focus();
-    };
-  }
-};
-
-const resetTimer = () => {
-  clearTimeout(inactivityTime);
-  inactivityTime = setTimeout(displayNotification, 60000); // 5 minutes
-};
-
-// Monitor user activity
-document.onmousemove = resetTimer;
-document.onkeypress = resetTimer;
-document.onscroll = resetTimer;
-
-// Start the timer
-resetTimer();
-    </script>
 </body>
 </html>
