@@ -63,7 +63,7 @@
             background-color: #4285f4;
             color: #fff;
             padding: 10px 20px;
-            border:none;
+            border: none;
             cursor: pointer;
             border-radius: 4px;
             margin-top: 1px;
@@ -85,11 +85,38 @@
             margin: 0 auto;
         }
 
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 15px;
+        }
+
         .search-title {
             margin-top: 0;
             margin-bottom: 5px;
             color: #1ca0b8;
         }
+
+        #search-input {
+            width: 100%;
+            padding: 13px;
+            border-radius: 4px;
+            border: 2px solid #1ca0b8;
+            font-size: 15px;
+        }
+
+        #search-input {
+            width: 50%; /* adjust the width to make it smaller */
+            padding: 10px;
+            border-radius: 4px;
+            border: 2px solid #1ca0b8;
+            font-size: 15px;
+            box-sizing: border-box; /* include padding and border in the total width */
+            max-width: 300px; /* set a maximum width for smaller screens */
+        }
+
         @media (min-width: 768px) { /* for screens that are 768px wide or larger */
             #search-input {
                 width: 50%; /* adjust the width for larger screens */
@@ -111,7 +138,9 @@
         .search-item {
             color: white;
             cursor: pointer;
-        }.search-item p {
+        }
+
+        .search-item p {
             margin: 0;
             padding: 10px;
         }
@@ -134,9 +163,24 @@
 </head>
 <body>
     <header>
-        <img src="bg.png" alt="My Website Logo">
+        <img src="logo.png" alt="My Website Logo">
     </header>
     <script async src="https://cse.google.com/cse.js?cx=b52902250bcba4084"></script>
     <div class="gcse-search"></div>
+    <script>
+        // Prevent redirection to Google and display search results on the same page
+        window.onload = function() {
+            var searchBox = document.querySelector(".gsc-search-box");
+            var searchButton = document.querySelector(".gsc-search-button-v2");
+
+            searchButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                var query = searchBox.querySelector("input").value;
+                if (query) {
+                    document.querySelector(".gcse-searchresults-only").style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
