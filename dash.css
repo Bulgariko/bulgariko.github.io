@@ -9,7 +9,7 @@
         header {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
 
         header img {
@@ -21,30 +21,30 @@
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 48px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border: none;
-            border-radius: 4px;
+            border-radius: 48px;
             background-color: #fff;
         }
 
         .gsc-control-cse {
             background-color: #fff;
-            border-radius: 4px;
+            border-radius: 48px;
             border: none;
-            margin-bottom: 10px;
-            padding: 10px;
+            margin-bottom: 48px;
+            padding: 48px;
         }
 
         .gsc-input {
             border: none;
-            padding: 10px;
+            padding: 48px;
             width: 100%;
-            font-size: 16px;
+            font-size: 48px;
             line-height: 1.5;
             color: #333;
             background-color: #f5f5f5;
-            border-radius: 4px;
+            border-radius: 48px;
             box-shadow: none;
             transition: box-shadow 0.3s ease;
         }
@@ -56,10 +56,10 @@
         .gsc-search-button-v2 {
             background-color: #4285f4;
             color: #fff;
-            padding: 10px 20px;
+            padding: 48px 48px;
             border: none;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 48px;
             margin-top: 1px;
             margin-right: 1px;
             transition: background-color 0.3s ease;
@@ -71,7 +71,7 @@
 
         .container-out {
             font-family: "Fira Sans", sans-serif;
-            padding: 15px 0;
+            padding: 48px 0;
         }
 
         .container-in {
@@ -98,7 +98,7 @@
             padding: 48px;
             border-radius: 48px;
             border: 2px solid #1ca0b8;
-            font-size: 15px;
+            font-size: 48px;
         }
 
         #search-input {
