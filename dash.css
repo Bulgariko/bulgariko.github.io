@@ -1,4 +1,11 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 header img {
-            width: 250px;
-            height: auto;
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
 }
